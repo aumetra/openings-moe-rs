@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Entry","Entry of the list"]],"type":[["List","Entity returned by loading the data from the list endpoint"]]});

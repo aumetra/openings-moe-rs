@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["all","Fetch a list of all openings known to `openings.moe`"]],"mod":[["entity","Entities returned by the API"]]});

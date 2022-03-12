@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["details","Entities returned by the details API"],["list","Entities of the list endpoint"]],"struct":[["Song","Song information"]]});
