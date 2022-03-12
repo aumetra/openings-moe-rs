@@ -1,0 +1,18 @@
+[package]
+name = "openings-moe"
+description = "Client library for the openings.moe API"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+const_format = "0.2.22"
+mime = "0.3.16"
+once_cell = "1.10.0"
+reqwest = { version = "0.11.9", features = ["json", "rustls-tls"], default-features = false }
+serde = { version = "1.0.136", features = ["derive"] }
+
+[dev-dependencies]
+tokio = { version = "1.17.0", features = ["full"] }
+
+[features]
