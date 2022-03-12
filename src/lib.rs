@@ -29,10 +29,13 @@ const LIST_URL: &str = concatcp!(BASE_API_URL, "/list.php");
 
 /// Globally shared reqwest client
 static CLIENT: Lazy<Client> = Lazy::new(|| {
-    Client::builder()
-        .user_agent(concat!("openings-moe-rs", "/", env!("CARGO_PKG_VERSION")))
-        .build()
-        .expect("Failed to build client")
+    let client = Client::builder();
+
+    // The `.user_agent()` function is not supported under WASM
+    #[cfg(not(target_arch = "wasm32"))]
+    let client = client.user_agent(concat!("openings-moe-rs", "/", env!("CARGO_PKG_VERSION")));
+
+    client.build().expect("Failed to build client")
 });
 
 /// Fetch a list of all openings known to `openings.moe`
